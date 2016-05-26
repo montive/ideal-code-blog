@@ -13,8 +13,10 @@ html
 		link(rel="shortcut icon", href="/logo.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
+		link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en")
+		link(rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.grey-pink.min.css")
+		link(rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons")
 		link(href="/styles/site.css", rel="stylesheet")
-
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
@@ -35,35 +37,31 @@ html
 	//- HTML BODY
 	body
 
-		//- HEADER
-		#header: .container
 
-			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
-			//- ... or completely change this header to suit your design.
-
-			div(role="navigation").navbar.navbar-default
-				.container-fluid
-					.navbar-header
-						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
-							span.sr-only Toggle navigation
-							span.icon-bar
-							span.icon-bar
-							span.icon-bar
-						a.navbar-brand(href='/') Mountain Code
-					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
+		div(class="mdl-layout mdl-js-layout mdl-layout--fixed-header")
+				header(class="mdl-layout__header mdl-layout__header--waterfall portfolio-header")
+						div(class="mdl-layout__header-row portfolio-logo-row")
+								span(class="mdl-layout__title")
+										div(class="portfolio-logo")
+										
+						div(class="mdl-layout__header-row portfolio-navigation-row mdl-layout--large-screen-only")
+								nav(class="mdl-navigation mdl-typography--body-1-force-preferred-font")
+									each link in navLinks
+										a(href=link.href ,class=(section == link.key ? 'mdl-navigation__link is-active' : "mdl-navigation__link" ))= link.label
+						
+		
+				div(class="mdl-layout__drawer mdl-layout--small-screen-only")
+						nav(class="mdl-navigation mdl-typography--body-1-force-preferred-font")
 							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
-						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+								a(href=link.href ,class=(section == link.key ? 'mdl-navigation__link is-active' : "mdl-navigation__link" ))= link.label
+		
+
+		//
+		//- HEADER
+	
 
 		//- BODY
-		#body
+		main(id="body" class="mdl-layout__content" style="display:block")
 
 			//- NOTE:
 			//- There is no .container wrapping class around body blocks to allow more flexibility in design.
@@ -81,10 +79,18 @@ html
 
 
 		//- FOOTER
-		.container: #footer
-
+		.mdl-mini-footer: #footer
+			div(class="mdl-mini-footer__left-section")
+				div(class="mdl-logo") Mountain Code
+				div(class="mdl-mini-footer__right-section")
+					ul(class="mdl-mini-footer__link-list")
+						li
+							a(href="#") Ayuda
+						li
+							a(href="#") Términos y Privacidad
+			
 			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+			// - p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
 
 		//- JAVASCRIPT
@@ -96,8 +102,8 @@ html
 
 		//- Customise which Bootstrap javascript files are served by including
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
-		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
-
+		//- script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
+		//script(src="https://code.getmdl.io/1.1.3/material.min.js")
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
 		if user && user.canAccessKeystone
