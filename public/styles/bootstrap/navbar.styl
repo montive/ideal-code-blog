@@ -12,7 +12,7 @@
   position relative
   min-height $navbar-height // Ensure a navbar always shows (e.g., without a .navbar-brand in collapsed mode)
   margin-bottom $navbar-margin-bottom
-  border 1px solid transparent
+
 
   // Prevent floats from breaking the navbar
   @extend .clearfix
@@ -142,7 +142,7 @@
 
 .navbar-brand
   float left
-  padding $navbar-padding-vertical $navbar-padding-horizontal
+  padding $navbar-brand-padding-vertical $navbar-brand-padding-horizontal
   font-size $font-size-large
   line-height $line-height-computed
   height $navbar-height
