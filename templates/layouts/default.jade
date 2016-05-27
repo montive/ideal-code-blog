@@ -11,10 +11,10 @@ html
 
 		title= title || 'Mountain Code'
 		link(rel="shortcut icon", href="/logo.ico", type="image/x-icon")
-
+		link(href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css')
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		link(href="/styles/site.css", rel="stylesheet")
-
+		
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
@@ -58,10 +58,10 @@ html
 						ul.nav.navbar-nav.navbar-right
 							if user
 								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
+									li: a(href='/keystone') Administración
+								li: a(href='/keystone/signout') Salir
 							else
-								li: a(href='/keystone/signin') Sign In
+								li: a(href='/keystone/signin') Ingresar
 
 		//- BODY
 		#body
@@ -82,10 +82,10 @@ html
 
 
 		//- FOOTER
-		.container: #footer
-
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
+		#footer
+			.container
+				//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
+				p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
 
 
 		//- JAVASCRIPT
@@ -98,7 +98,7 @@ html
 		//- Customise which Bootstrap javascript files are served by including
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
 		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
-
+		script(src="https://use.fontawesome.com/ea9c9e7e43.js")
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
 		if user && user.canAccessKeystone
