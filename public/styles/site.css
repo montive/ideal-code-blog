@@ -6738,7 +6738,7 @@ button.close {
   height: auto;
 }
 body {
-  overflow-x: hidden;
+  padding: 0;
 }
 i {
   color: #004d40;
@@ -6752,4 +6752,7 @@ i {
 }
 .space-bot {
   padding-bottom: 35px;
+}
+.space-top {
+  margin-top: 1.4em;
 }
