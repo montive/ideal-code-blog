@@ -34,6 +34,10 @@ var routes = {
 // Setup Route Bindings
 exports = module.exports = function (app) {
 	// Views
+	app.get('/robots.txt', function (req, res) {
+    res.type('text/plain');
+    res.send("User-agent: *\nDisallow: /images/\nDisallow: /css/\nDisallow: /js/\nDisallow: /keystone/");
+});
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
 	app.get('/blog/post/:post', routes.views.post);
