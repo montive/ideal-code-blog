@@ -13,6 +13,7 @@ var paths = {
 	'style': {
 		main: './public/styles/site.styl',
 		all: './public/styles/**/*.styl',
+		css: './public/styles/site.css',
 		output: './public/styles/'
 	}
 
@@ -21,6 +22,10 @@ var paths = {
 
 gulp.task('watch:stylus', function () {
 	gulp.watch(paths.style.all, ['stylus']);
+});
+
+gulp.task('watch:minify-css', function() {
+	gulp.watch(paths.style.css, ['minify-css']);
 });
 
 gulp.task('minify-css', function() {
@@ -42,7 +47,9 @@ gulp.task('stylus', function () {
 gulp.task('runKeystone', shell.task('node keystone.js'));
 gulp.task('watch', [
   'stylus',
-  'watch:stylus'
+  'watch:stylus',
+	'minify-css',
+	'watch:minify-css'
 ]);
 
 gulp.task('default', ['watch', 'runKeystone']);

@@ -6756,6 +6756,20 @@ i {
 .space-top {
   margin-top: 1.4em;
 }
+.facebook {
+  color: #3b5998;
+}
+.twitter {
+  color: #6caddf;
+}
+.white {
+  color: #fff;
+}
+.space {
+  margin-right: 5px;
+  padding: 5px 10px;
+  padding-left: 0px;
+}
 #footer .col-md-4 {
   margin-bottom: 1em;
 }
