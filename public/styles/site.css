@@ -6756,3 +6756,25 @@ i {
 .space-top {
   margin-top: 1.4em;
 }
+#footer .col-md-4 {
+  margin-bottom: 1em;
+}
+#footer .col-md-4 hr {
+  margin-top: 0px;
+  margin-bottom: 3px;
+  border-top: 1px solid #18614c;
+}
+#footer .col-md-4 h5 {
+  margin-bottom: 5px;
+}
+.list-foot {
+  list-style: none;
+  padding-left: 1px;
+}
+.list-foot a {
+  color: #fff;
+}
+.list-foot a:hover {
+  color: #d3d3d3;
+  text-decoration: none;
+}

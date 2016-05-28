@@ -14,7 +14,7 @@ html
 		link(rel="shortcut icon", href="/logo.ico", type="image/x-icon")
 		link(href='https://fonts.googleapis.com/css?family=Roboto' rel='stylesheet' type='text/css')
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
-		link(href="/dist/site.css", rel="stylesheet")
+		link(href="/styles/site.css", rel="stylesheet")
 		
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
@@ -86,8 +86,24 @@ html
 		#footer
 			.container
 				//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-				p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
-
+				.col-md-4.col-xs-12
+					h4 ¿Quiénes somos?
+					p Somos una start-up venezolana dedicada al desarrollo de aplicaciones web de calidad y con diseños modernos con el fin de renovar el espacio digital venezolano.
+				.col-md-4.col-xs-12
+					h5 Navegación
+					hr
+					ul.list-foot
+						each link in navLinks
+							li 
+								a(class="white text-decoration-none", href=link.href)= link.label
+				.col-md-4.col-xs-12
+					h5 Cosas Aburridas
+					hr
+					ul.list-foot
+						li 
+							a(class="white text-decoration-none", href="/terminos") Términos del servicio
+						li 
+							a(class="white text-decoration-none", href="/terminos") Politicas de privacidad
 
 		//- JAVASCRIPT
 
