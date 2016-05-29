@@ -6806,6 +6806,9 @@ article p a {
   margin-left: auto;
   margin-right: auto;
 }
+#footer {
+  bottom: 0;
+}
 #footer .col-md-4 {
   margin-bottom: 1em;
 }
