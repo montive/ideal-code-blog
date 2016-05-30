@@ -11,10 +11,6 @@
 //
 // You can also add your own custom variables to this file for
 // use in your site stylesheets.
-
-
-
-
 // Site Styles
 // ===========
 
@@ -25,7 +21,7 @@ body
   padding: 0
 
 i
-  color: #004d40
+  color $navbar-default-bg
   padding: 30px 5px
 
 .info-imagen
@@ -54,40 +50,83 @@ i
   padding: 5px 10px
   padding-left: 0px
 
-article
-  p
-    margin-top: 15px
-    font-size: 18px
+.post-space-big
+  padding: 2em
 
-    a:hover
+.post-space
+  padding: 1em
+
+  .read-more
+    a
+      color:$primario
+      font-weight: bold;
+
+    a:focus
       text-decoration: none
-      color: gray
+      color: $primario
+
+    i
+      color:$primario
+      padding: 0px
+
+  .read-more:hover
 
     a
+      color:$secundario
+      font-weight: bold
       text-decoration: none
-      color: rgb(51, 51, 51)
 
+    i
+      color:$secundario
+      padding: 0px
+
+
+article
+  h1
+    color: $primario
+  h5
+    color: #90a4ae
+
+  a
+    i
+      padding-top: .8em
+      padding-bottom: 0px
+
+      color $navbar-default-bg
 
 .post
   margin-bottom: 3em
 
   h2
-    a:hover
-      text-decoration: none
-      color: gray
+    i
+      padding: 0
+      padding-right: 14px
+      color: $primario
+
+    i:hover
+      padding: 0
+      padding-right: 14px
+      color: $secundario
 
     a
       text-decoration: none
-      color: rgb(51, 51, 51)
+      color: $primario
+
+    a:hover
+      text-decoration: none
+      color: $secundario
 
   .pull-right
      margin-left: 2em
+     margin-top: 2em
+     margin-right: 1em
+     border-radius: 5px
 
   p
     font-size: 16px
 
   .image-wrap
-    margin: 2em
+    margin: 1em
 
     img
       margin-left: auto
@@ -101,7 +140,7 @@ article
     hr
       margin-top: 0px
       margin-bottom: 3px
-      border-top: 1px solid #18614C
+      border-top: 1px solid #607d8b
 
     h5
       margin-bottom: 5px
@@ -119,5 +158,20 @@ article
     color: #fff
 
   a:hover
-    color: lightgray
+    color: #546e7a
     text-decoration: none
+
+.red-light
+  color:$secundario
+
+.red
+  color: $primario
+
+.jumbotron
+
+  .red
+    color: $primario
+
+.mostrando
+  color: #90a4ae
+  font-size: 14px

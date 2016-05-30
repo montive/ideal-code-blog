@@ -3,7 +3,8 @@ extends ../layouts/default
 block content
 	.container: .row: .col-sm-10.col-sm-offset-1.col-md-8.col-md-offset-2
 		article
-			p: a(href='/blog') &larr; regresar al blog
+			a(href='/blog')
+				i.fa.fa-arrow-left.fa-2x &nbsp Regresar 
 			hr
 			if !data.post
 				h2 Publicación inválida.
@@ -22,7 +23,7 @@ block content
 								else
 									|  
 						if data.post.author
-							| por #{data.post.author.name.first}
+							| por #{data.post.author.name.first + " " + data.post.author.name.last}
 				.post
 					if data.post.image.exists
 						.image-wrap: img(src=data.post._.image.fit(750,450)).img-responsive
