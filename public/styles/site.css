@@ -6817,6 +6817,9 @@ article a i {
 .post {
   margin-bottom: 3em;
 }
+.post .panel-heading p {
+  font-size: 14px;
+}
 .post h2 i {
   padding: 0;
   padding-right: 14px;
