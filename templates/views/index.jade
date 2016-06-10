@@ -1,23 +1,70 @@
 extends ../layouts/default
 
 block content
-	.container: .jumbotron
-		img(src='/images/logo.svg', width='160')
-		h1 Welcome
-		p This is your new <a href='http://keystonejs.com' target='_blank'>KeystoneJS</a> website.
-		p It includes the latest versions of
-			| <a href='http://getbootstrap.com/' target='_blank'>Bootstrap</a>
-			| and <a href='http://www.jquery.com/' target='_blank'>jQuery</a>.
-		p Visit the <a href='http://keystonejs.com/guide' target='_blank'>Getting Started</a> guide to learn how to customise it.
-		hr
-		if user && user.canAccessKeystone
-			p
-				a(href='/keystone').btn.btn-lg.btn-primary Open the Admin UI
-		else
-			p We have created a default Admin user for you with the email <strong>dimitriosmandamadiotis@gmail.com</strong> and the password <strong>admin</strong>.
-			p
-				a(href='/keystone/signin', style='margin-right: 10px').btn.btn-lg.btn-primary Sign in
-				|  to use the Admin UI.
-		hr
-		p Remember to <a href='https://github.com/keystonejs/keystone' target='_blank'>Star KeystoneJS on GitHub</a> and
-			| <a href='https://twitter.com/keystonejs' target='_blank'>follow @keystonejs</a> on twitter for updates.
+	#headerwrap: .container
+		.row.centered
+			.col-lg-8.col-lg-offset-2
+			h1 It Doesn't Take a Rocket #[b Scientist]
+			h2 It Takes a Designer
+
+	.container.w 
+		.row.centered
+			br
+			.col-lg-4
+				i.fa.fa-heart
+				h4 DESIGN
+				p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even believable.
+				
+			.col-lg-4
+				i.fa.fa-laptop
+				h4 BOOTSTRAP
+				p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even believable.
+					
+			.col-lg-4
+				i.fa.fa-trophy
+				h4 SUPPORT
+				p There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected humour, or randomised words which don't look even believable.
+		br
+		br
+		
+	#dg: .container
+		.row.centered
+			h4 LATEST WORKS
+			br
+			.col-lg-4: .tilt
+				a(href="#")
+					img(src="/images/img/p01.png", alt="")
+			.col-lg-4: .tilt
+				a(href="#")
+					img(src="/images/img/p02.png", alt="")
+			.col-lg-4: .tilt
+				a(href="#")
+					img(src="/images/img/p03.png", alt="")
+
+	.container.wb: row.centered
+		br
+		.col-lg-8.col-lg-offset-2
+			h4 WE CREATE FIRST CLASS DESIGN
+			p By being true to the brand we represent, we elevate the audiences’ relationship to it. Like becomes love becomes a passion. Passion becomes advocacy. And we see the brand blossom from within, creating a whole story the audience embraces. That’s when the brand can truly flex its muscles.
+		p
+			br
+			br
+		.col-lg-2
+		.col-lg-10.col-lg-offset-1
+			img(src="/images/img/munter.png", class="img-responsive", alt="")
+
+	#lg: .container
+		.row.centered
+			h4 OUR AWESOME CLIENTS
+			.col-lg-2.col-lg-offset-1
+				img(src="/images/img/c01.gif" alt="")
+			.col-lg-2
+				img(src="/images/img/c02.gif" alt="")
+			.col-lg-2
+				img(src="/images/img/c03.gif" alt="")
+			.col-lg-2
+				img(src="/images/img/c04.gif" alt="")
+			.col-lg-2
+				img(src="/images/img/c05.gif" alt="")
+
+			

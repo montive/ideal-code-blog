@@ -19,10 +19,12 @@ var _ = require('underscore');
 */
 exports.initLocals = function (req, res, next) {
 	res.locals.navLinks = [
-		{ label: 'Inicio', key: 'home', href: '/' },
-		{ label: 'Blog', key: 'blog', href: '/blog' },
-		{ label: 'Portafolio', key: 'gallery', href: '/gallery' },
-		{ label: 'Contacto', key: 'contact', href: '/contact' },
+		{ label: 'INICIO', key: 'home', href: '/' },
+		{ label: 'NOSOTROS', key: 'about', href: '/about' },
+		{ label: 'BLOG', key: 'blog', href: '/blog' },
+		{ label: 'TRABAJOS', key: 'gallery', href: '/gallery' },
+		{ label: 'SERVICIOS', key: 'services', href: '/services'},
+		{ label: '', key: 'contact', href: '/contact' },
 	];
 	res.locals.user = req.user;
 	next();

@@ -8,23 +8,18 @@ html
 		meta(charset="utf-8")
 		meta(name="viewport", content="width=device-width, initial-scale=1.0")
 		meta(http-equiv="X-UA-Compatible" content="IE=edge")
-
-		title= title || 'Mountain Code'
+		meta(name="description" content="")
+		meta(name="author" content="")
+		title= title || 'Ideal Code - Desarrolo Web en Venezuela y el Mundo'
 		link(rel="shortcut icon", href="/logo.ico", type="image/x-icon")
 
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
+		link(href="/styles/font-awesome.min.css", rel="stylesheet")
 		link(href="/styles/site.css", rel="stylesheet")
-
+		link(href="/styles/main.css", rel="stylesheet")
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
-
-		//- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries
-		//- Safely remove this block if you are not targeting IE8
-		//-[if lt IE 9]
-			script(src="//cdn.jsdelivr.net/html5shiv/3.7.3/html5shiv.js")
-			script(src="//cdn.jsdelivr.net/respond/1.4.2/respond.min.js")
-		//-[endif]
 
 		//- Include template-specific stylesheets by extending the css block
 		block css
@@ -36,31 +31,29 @@ html
 	body
 
 		//- HEADER
-		#header: .container
+		#header
 
 			//- Customise your site's navigation by changing the navLinks Array in ./routes/middleware.js
 			//- ... or completely change this header to suit your design.
 
-			div(role="navigation").navbar.navbar-default
-				.container-fluid
+			div(role="navigation").navbar.navbar-inverse.navbar-fixed-top
+				.container
 					.navbar-header
 						button.navbar-toggle(type='button', data-toggle='collapse', data-target='.navbar-collapse')
 							span.sr-only Toggle navigation
 							span.icon-bar
 							span.icon-bar
 							span.icon-bar
-						a.navbar-brand(href='/') Mountain Code
+						a.navbar-brand(href='/') ideal c#[i(class="fa fa-circle")]de
 					.collapse.navbar-collapse
-						ul.nav.navbar-nav.navbar-left
-							each link in navLinks
-								li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 						ul.nav.navbar-nav.navbar-right
-							if user
-								if user.canAccessKeystone
-									li: a(href='/keystone') Open Keystone
-								li: a(href='/keystone/signout') Sign Out
-							else
-								li: a(href='/keystone/signin') Sign In
+							each link in navLinks
+								if link.key == 'contact'
+									li
+										a(href=link.href) #[i.fa.fa-envelope-o]
+								else
+									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
+							
 
 		//- BODY
 		#body
@@ -78,14 +71,23 @@ html
 
 			//- The content block should contain the body of your template's content
 			block content
-
+		
+		//- DESCRIPTION
+		#r: .container
+			.row.centered
+				.col-lg-8.col-lg-offset-2
+					h4 WE ARE STORYTELLERS. BRANDS ARE OUR SUBJECTS. DESIGN IS OUR VOICE.
+					p We believe ideas come from everyone, everywhere. At BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design.
 
 		//- FOOTER
-		.container: #footer
-
-			//- You don't _have_ to include a link saying your site is powered by KeystoneJS, but we appreciate it!
-			p Powered by <a href="http://keystonejs.com" target="_blank">KeystoneJS</a>.
-
+		#f: .container
+			.row.centered
+				a(href="#")
+					i(class="fa fa-twitter")
+				a(href="#")
+					i(class="fa fa-facebook")
+				a(href="#")
+					i(class="fa fa-dribbble")
 
 		//- JAVASCRIPT
 
