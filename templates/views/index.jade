@@ -1,5 +1,44 @@
 extends ../layouts/default
 
+block css
+	style.
+		#headerwrap {
+			background: url(http://res.cloudinary.com/mountain-code/image/upload/v1466106968/header-bg_kwifwh.jpg) no-repeat center top;
+			margin-top: -10px;
+			padding-top:20px;
+			text-align:center;
+			background-attachment: relative;
+			background-position: center center;
+			min-height: 500px;
+			width: 100%;
+
+				-webkit-background-size: 100%;
+				-moz-background-size: 100%;
+				-o-background-size: 100%;
+				background-size: 100%;
+
+				-webkit-background-size: cover;
+				-moz-background-size: cover;
+				-o-background-size: cover;
+				background-size: cover;
+		}
+
+		#headerwrap h1 {
+			margin-top: 100px;
+			color: white;
+			font-size: 70px;
+			font-weight: 300;
+			letter-spacing: 3px;
+		}
+
+		#headerwrap h2 {
+			color: white;
+			font-size: 40px;
+			font-weight: 700;
+			letter-spacing: 2px;
+			text-transform: uppercase;
+		}
+
 block content
 	#headerwrap: .container
 		.row.centered
@@ -55,16 +94,16 @@ block content
 
 	#lg: .container
 		.row.centered
-			h4 OUR AWESOME CLIENTS
+			h4.space-bot OUR AWESOME TECNOLOGIES
 			.col-lg-2.col-lg-offset-1
-				img(src="/images/img/c01.gif" alt="")
+				i.fa.fa-html5.fa-5x
 			.col-lg-2
-				img(src="/images/img/c02.gif" alt="")
+				i.fa.fa-css3.fa-5x
 			.col-lg-2
-				img(src="/images/img/c03.gif" alt="")
+				i.fa.fa-android.fa-5x
 			.col-lg-2
-				img(src="/images/img/c04.gif" alt="")
+				i.fa.fa-apple.fa-5x
 			.col-lg-2
-				img(src="/images/img/c05.gif" alt="")
+				i.fa.fa-linux.fa-5x
 
 			

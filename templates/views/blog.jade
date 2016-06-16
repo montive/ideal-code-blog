@@ -1,10 +1,10 @@
 extends ../layouts/default
 
 mixin post(post)
-	.row.vertical-align
+	.row
 		br
 		.col-lg-6.centered
-			img(src=post._.image.fit(420,420))
+			img.vertical-move(src=post._.image.fit(420,420))
 		#post-brief.col-lg-6
 			h2.title-post: a(href='/blog/post/' + post.slug)= post.title
 			p.lead.text-muted Publicado 

@@ -12,11 +12,21 @@ html
 		meta(name="author" content="")
 		title= title || 'Ideal Code - Desarrolo Web en Venezuela y el Mundo'
 		link(rel="shortcut icon", href="/logo.ico", type="image/x-icon")
-
+		
+		style.
+			.no-js #loader { display: none;  }
+			.js #loader { display: block; position: absolute; left: 100px; top: 0; }
+			.se-pre-con {
+			position: fixed;
+			left: 0px;
+			top: 0px;
+			width: 100%;
+			height: 100%;
+			z-index: 9999;
+			background: url(http://res.cloudinary.com/mountain-code/image/upload/v1466108884/Preloader_11_dxgh3i.gif) center no-repeat #fff;
+			}
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
-		link(href="/styles/font-awesome.min.css", rel="stylesheet")
-		link(href="/styles/site.css", rel="stylesheet")
-		link(href="/styles/main.css", rel="stylesheet")
+		
 		//- This file provides the default styling for the KeystoneJS Content Editor
 		if user && user.canAccessKeystone
 			link(href="/keystone/styles/content/editor.min.css", rel="stylesheet")
@@ -26,10 +36,38 @@ html
 
 		//- Add any other template-specific HEAD tags by extending the head block
 		block head
-
-	//- HTML BODY
+	
+	
+	script.
+		function fade(element) {
+			var op = 1;  // initial opacity
+			var timer = setInterval(function () {
+					if (op <= 0.1){
+							clearInterval(timer);
+							element.style.display = 'none';
+					}
+					element.style.opacity = op;
+					element.style.filter = 'alpha(opacity=' + op * 100 + ")";
+					op -= op * 0.1;
+				}, 50);
+		}
+		window.onload = function() {
+			var x = document.getElementById('fade')
+			fade(x);
+		};
+		var cb = function() {
+		var l = document.createElement('link'); l.rel = 'stylesheet';
+		l.href = '/dist/site.css';
+		var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h); };
+		var raf = requestAnimationFrame || mozRequestAnimationFrame ||
+		webkitRequestAnimationFrame || msRequestAnimationFrame;
+		if (raf) raf(cb);
+		else window.addEventListener('load', cb);
+		
+	.se-pre-con#fade
+		//- HTML BODY
 	body
-
+		
 		//- HEADER
 		#header
 
@@ -90,20 +128,19 @@ html
 					i(class="fa fa-dribbble")
 
 		//- JAVASCRIPT
-
 		//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 		//- you can upgrade to 2.1.4 (also bundled) for better performance.
-		script(src='/js/jquery/jquery-1.11.3.min.js')
-
+		
+		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
 		//- Customise which Bootstrap javascript files are served by including
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
-		script(src='/js/bootstrap/bootstrap-3.3.5.min.js')
-
+		script(src='/js/bootstrap/bootstrap-3.3.5.min.js', async)
+		
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
 		if user && user.canAccessKeystone
-			script(src='/keystone/js/content/editor.js')
+			script(src='/keystone/js/content/editor.js', async)
 
 		//- Add scripts that are globally required by your site here.
 
