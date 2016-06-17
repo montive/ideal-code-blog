@@ -39,40 +39,7 @@ html
 		block head
 	
 	
-	script.
-		function fade(element) {
-			var op = 1;  // initial opacity
-			var timer = setInterval(function () {
-					if (op <= 0.1){
-							clearInterval(timer);
-							element.style.display = 'none';
-					}
-					element.style.opacity = op;
-					element.style.filter = 'alpha(opacity=' + op * 100 + ")";
-					op -= op * 0.1;
-				}, 50);
-		}
-		function loadStyleSheet(src){
-			if (document.createStyleSheet) document.createStyleSheet(src);
-			else {
-				var stylesheet = document.createElement('link');
-				stylesheet.href = src;
-				stylesheet.rel = 'stylesheet';
-				stylesheet.type = 'text/css';
-				document.getElementsByTagName('head')[0].appendChild(stylesheet);
-			}
-		}
-		function downloadJSAtOnload() {
-			var element = document.createElement("script");
-			element.src = "/js/script.js";
-			document.body.appendChild(element);
-		}
-		window.onload = function() {
-			var x = document.getElementById('fade');
-			fade(x);
-			downloadJSAtOnload();
-			loadStyleSheet('/dist/site.css');
-		};
+	script function fade(e){var t=1,n=setInterval(function(){.1>=t&&(clearInterval(n),e.style.display="none"),e.style.opacity=t,e.style.filter="alpha(opacity="+100*t+")",t-=.1*t},50)}function loadStyleSheet(e){if(document.createStyleSheet)document.createStyleSheet(e);else{var t=document.createElement("link");t.href=e,t.rel="stylesheet",t.type="text/css",document.getElementsByTagName("head")[0].appendChild(t)}}function downloadJSAtOnload(){var e=document.createElement("script");e.src="/js/script.js",document.body.appendChild(e)}window.onload=function(){var e=document.getElementById("fade");fade(e),downloadJSAtOnload(),loadStyleSheet("/dist/site.css")};
 		
 	.se-pre-con#fade
 		//- HTML BODY
