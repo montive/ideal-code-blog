@@ -11,8 +11,8 @@ var keystone = require('keystone');
 
 keystone.init({
 
-	'name': 'Mountain Code',
-	'brand': 'Mountain Code',
+	'name': 'Ideal Code',
+	'brand': 'Ideal Code',
 
 	'stylus': 'public',
 	'static': 'public',
