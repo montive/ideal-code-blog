@@ -52,18 +52,27 @@ html
 					op -= op * 0.1;
 				}, 50);
 		}
+		function loadStyleSheet(src){
+			if (document.createStyleSheet) document.createStyleSheet(src);
+			else {
+				var stylesheet = document.createElement('link');
+				stylesheet.href = src;
+				stylesheet.rel = 'stylesheet';
+				stylesheet.type = 'text/css';
+				document.getElementsByTagName('head')[0].appendChild(stylesheet);
+			}
+		}
+		function downloadJSAtOnload() {
+			var element = document.createElement("script");
+			element.src = "/js/script.js";
+			document.body.appendChild(element);
+		}
 		window.onload = function() {
-			var x = document.getElementById('fade')
+			var x = document.getElementById('fade');
 			fade(x);
+			downloadJSAtOnload();
+			loadStyleSheet('/dist/site.css');
 		};
-		var cb = function() {
-		var l = document.createElement('link'); l.rel = 'stylesheet';
-		l.href = '/dist/site.css';
-		var h = document.getElementsByTagName('head')[0]; h.parentNode.insertBefore(l, h); };
-		var raf = requestAnimationFrame || mozRequestAnimationFrame ||
-		webkitRequestAnimationFrame || msRequestAnimationFrame;
-		if (raf) raf(cb);
-		else window.addEventListener('load', cb);
 		
 	.se-pre-con#fade
 		//- HTML BODY
@@ -135,10 +144,10 @@ html
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,
 		//- you can upgrade to 2.1.4 (also bundled) for better performance.
 		
-		script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
+		//-script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js")
 		//- Customise which Bootstrap javascript files are served by including
 		//- them specifically here, instead of bootstrap-3.3.5.min.js
-		script(src='/js/bootstrap/bootstrap-3.3.5.min.js', async)
+		//-script(src='/js/bootstrap/bootstrap-3.3.5.min.js', async)
 		
 		//- The KeystoneJS Content Editor provides support for ks-editable data attributes,
 		//- which generate links to edit content for users who can access Keystone
