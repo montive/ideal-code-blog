@@ -90,6 +90,8 @@ html
 								if link.key == 'contact'
 									li
 										a(href=link.href) #[i.fa.fa-envelope-o]
+									li
+										a(href='/keystone/signin') #[i.fa.fa-sign-in]	
 								else
 									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 							
