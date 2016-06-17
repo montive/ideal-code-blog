@@ -45,7 +45,8 @@ gulp.task('minify-css', function() {
 gulp.task('runKeystone', shell.task('node keystone.js'));
 gulp.task('watch', [
   'stylus',
-  'watch:stylus'
+  'watch:stylus',
+	'watch:minify-css'
 ]);
 
 gulp.task('default', ['watch', 'runKeystone']);
