@@ -33,13 +33,13 @@ var routes = {
 
 // Setup Route Bindings
 exports = module.exports = function (app) {
-	
+
 	app.set('trust proxy', true);
 	app.use(middleware.wwwRedirect);
 	// Views
 	app.get('/robots.txt', function (req, res) {
     res.type('text/plain');
-    res.send("User-agent: *\nDisallow: /images/\nDisallow: /css/\nDisallow: /js/\nDisallow: /keystone/");
+    res.send("User-agent: *\nDisallow: /images/\nDisallow: /css/\nDisallow: /js/\nDisallow: /keystone/\nDisallow: /dist/\nDisallow: /styles/");
 	});
 	app.get('/', routes.views.index);
 	app.get('/blog/:category?', routes.views.blog);
