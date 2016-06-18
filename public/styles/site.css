@@ -4164,7 +4164,7 @@ hr {
   border-color: #2d2d2d;
 }
 .navbar-inverse .navbar-nav > .active > a {
-  background: #ff7878;
+  background: #4db19e;
 }
 .navbar-inverse .navbar-brand {
   color: #999;
@@ -4173,7 +4173,7 @@ hr {
   letter-spacing: 1px;
 }
 .navbar-inverse .navbar-brand i {
-  color: #ff7878;
+  color: #4db19e;
   font-size: 22px;
   letter-spacing: 1px;
 }
@@ -4217,7 +4217,7 @@ hr {
 }
 /* Red Wrap */
 #r {
-  background: #ff7878;
+  background: #4db19e;
   padding-top: 35px;
   padding-bottom: 35px;
 }
@@ -4253,7 +4253,7 @@ hr {
   padding: 20px;
 }
 #f i:hover {
-  color: #ff7878;
+  color: #4db19e;
 }
 /****** SECTIONS *****/
 .w {
@@ -4263,7 +4263,7 @@ hr {
   font-weight: 700;
 }
 .w i {
-  color: #ff7878;
+  color: #4db19e;
   font-size: 30px;
 }
 .wb {
@@ -4280,7 +4280,7 @@ hr {
   font-weight: 700;
 }
 .desc i {
-  color: #ff7878;
+  color: #4db19e;
   font-size: 12px;
   padding: 5px;
 }
@@ -4385,7 +4385,7 @@ hr {
   background: #1abc9c;
 }
 .pricing-option .pricing-signup:hover {
-  background: #ff7878;
+  background: #4db19e;
 }
 .title-post {
   font-weight: bold;
