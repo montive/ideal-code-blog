@@ -12,7 +12,7 @@ html
 		meta(name="author" content="")
 		meta(name="google-site-verification", content="D-n13gy-Egap-8oQObzCgwB3wX2OjS-sZAJp4yIGJw0")
 		title= title || 'Ideal Code - Desarrollo Web en Venezuela y el Mundo'
-		link(rel="shortcut icon", href="/logo.ico", type="image/x-icon")
+		link(rel="shortcut icon", href="/favicon.ico", type="image/x-icon")
 		
 		style.
 			.no-js #loader { display: none;  }
@@ -26,6 +26,8 @@ html
 			z-index: 9999;
 			background: url(http://res.cloudinary.com/mountain-code/image/upload/v1466108884/Preloader_11_dxgh3i.gif) center no-repeat #fff;
 			}
+			.tamanio {font-size:16px}
+			.gris {color:#bdbdbd}
 		//- Customise the stylesheet for your site by editing /public/styles/site.sass
 		
 		//- This file provides the default styling for the KeystoneJS Content Editor
@@ -64,10 +66,9 @@ html
 						ul.nav.navbar-nav.navbar-right
 							each link in navLinks
 								if link.key == 'contact'
+									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 									li
-										a(href=link.href) #[i.fa.fa-envelope-o]
-									li
-										a(href='/keystone/signin') #[i.fa.fa-sign-in]	
+										a(href='/keystone/signin') #[i.fa.fa-sign-in.tamanio]	
 								else
 									li(class=(section == link.key ? 'active' : null)): a(href=link.href)= link.label
 							
@@ -89,12 +90,7 @@ html
 			//- The content block should contain the body of your template's content
 			block content
 		
-		//- DESCRIPTION
-		#r: .container
-			.row.centered
-				.col-lg-8.col-lg-offset-2
-					h4 SOMOS ARTISTAS. EL CÓDIGO ES NUESTRO SER. LA CALIDAD ES NUESTRA VOZ.
-					p We believe ideas come from everyone, everywhere. At BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design.
+		
 
 		//- FOOTER
 		#f: .container
@@ -105,7 +101,10 @@ html
 					i(class="fa fa-facebook")
 				a(href="#")
 					i(class="fa fa-dribbble")
-
+			.row.centered
+				.col-lg-8.col-lg-offset-2
+					h4.gris Somos artistas, el código es nuestro ser, la calidad es nuestra voz.
+					p We believe ideas come from everyone, everywhere. At BlackTie, everyone within our agency walls is a designer in their own right. And there are a few principles we believe—and we believe everyone should believe—about our design craft. These truths drive us, motivate us, and ultimately help us redefine the power of design.
 		//- JAVASCRIPT
 		//- jQuery 1.11.3 is included by default, and required by both Bootstrap
 		//- and the KeystoneJS Content Editor. If you are not targeting IE8,

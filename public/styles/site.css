@@ -4092,6 +4092,7 @@ fieldset[disabled] .navbar-inverse .btn-link:focus {
     display: none !important;
   }
 }
+@import 'https://fonts.googleapis.com/css?family=Lato';
 body {
   background-color: #f2f2f2;
   font-family: "Lato";
@@ -4164,7 +4165,7 @@ hr {
   border-color: #2d2d2d;
 }
 .navbar-inverse .navbar-nav > .active > a {
-  background: #4db19e;
+  background: #dc5753;
 }
 .navbar-inverse .navbar-brand {
   color: #999;
@@ -4173,7 +4174,7 @@ hr {
   letter-spacing: 1px;
 }
 .navbar-inverse .navbar-brand i {
-  color: #4db19e;
+  color: #dc5753;
   font-size: 22px;
   letter-spacing: 1px;
 }
@@ -4217,7 +4218,7 @@ hr {
 }
 /* Red Wrap */
 #r {
-  background: #4db19e;
+  background: #dc5753;
   padding-top: 35px;
   padding-bottom: 35px;
 }
@@ -4230,7 +4231,7 @@ hr {
 }
 /* Blue Wrap */
 #blue {
-  background: #3498db;
+  background: #354d59;
   padding-top: 35px;
   padding-bottom: 35px;
 }
@@ -4253,7 +4254,7 @@ hr {
   padding: 20px;
 }
 #f i:hover {
-  color: #4db19e;
+  color: #dc5753;
 }
 /****** SECTIONS *****/
 .w {
@@ -4263,7 +4264,7 @@ hr {
   font-weight: 700;
 }
 .w i {
-  color: #4db19e;
+  color: #dc5753;
   font-size: 30px;
 }
 .wb {
@@ -4280,7 +4281,7 @@ hr {
   font-weight: 700;
 }
 .desc i {
-  color: #4db19e;
+  color: #dc5753;
   font-size: 12px;
   padding: 5px;
 }
@@ -4329,7 +4330,7 @@ hr {
   position: absolute;
   top: 0;
   left: 0;
-  background: #1abc9c;
+  background: #eeb269;
   text-transform: uppercase;
   font-size: 15px;
   font-weight: bold;
@@ -4382,10 +4383,10 @@ hr {
   font-weight: bold;
   padding: 15px 10px;
   color: #fff;
-  background: #1abc9c;
+  background: #eeb269;
 }
 .pricing-option .pricing-signup:hover {
-  background: #4db19e;
+  background: #dc5753;
 }
 .title-post {
   font-weight: bold;
